@@ -46,21 +46,21 @@ const Footer = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@digitekk.com',
-      link: 'mailto:hello@digitekk.com',
+      value: 'info@ylsbusinessmanagement.com',
+      link: 'mailto:info@ylsbusinessmanagement.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      value: '+1 (289) 885-3706',
+      link: 'tel:+12898853706',
     },
-    {
-      icon: MapPin,
-      label: 'Address',
-      value: '123 Innovation Drive, Tech Valley, CA 94016',
-      link: 'https://maps.google.com',
-    },
+    // {
+    //   icon: MapPin,
+    //   label: 'Address',
+    //   value: '123 Innovation Drive, Tech Valley, CA 94016',
+    //   link: 'https://maps.google.com',
+    // },
   ];
 
   const socialLinks = [
@@ -80,11 +80,11 @@ const Footer = () => {
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 bg-gradient-tech rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">D</span>
+                <span className="text-white font-bold text-xl">Y</span>
               </div>
               <div>
-                <h1 className="text-2xl font-bold">DigiTekk</h1>
-                <p className="text-sm text-secondary-200">IT Solutions & Digital Services</p>
+                <h1 className="text-2xl font-bold">YLS</h1>
+                <p className="text-sm text-secondary-200">Business Management</p>
               </div>
             </div>
             
@@ -113,7 +113,7 @@ const Footer = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4" style={{ visibility: 'hidden' }}>
               {socialLinks.map((social) => {
                 const IconComponent = social.icon;
                 return (
@@ -225,10 +225,11 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto container-padding py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-secondary-200 text-sm">
-              © {currentYear} DigiTekk. All rights reserved.
+              © {currentYear} <a style={{ textDecoration: 'underline', onHover: { textDecoration: 'none' } }} 
+              href="https://apptomation.ca" target="_blank" rel="noopener noreferrer">Apptomation</a>. All rights reserved.
             </div>
             
-            <div className="flex items-center space-x-6 text-sm">
+            <div className="flex items-center space-x-6 text-sm" style={{ visibility: 'hidden' }}>
               <Link to="/privacy" className="text-secondary-200 hover:text-white transition-colors">
                 Privacy Policy
               </Link>
@@ -239,6 +240,8 @@ const Footer = () => {
                 Cookie Policy
               </Link>
             </div>
+
+
           </div>
         </div>
       </div>
