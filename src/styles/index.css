@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS */
+@layer base {
+  * {
+    @apply border-secondary-200;
+  }
+  
+  body {
+    @apply bg-background text-text-primary font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+ .welcome-slides {
+    display: block;
+    position: relative;
+    z-index: 1;
+    height: auto;
+    overflow: hidden;
+}
+.single-welcome-slide {
+    height: 100vh;
+}
+
+@layer components {
+  /* Skeleton Loading Animation */
+  .skeleton {
+    background: linear-gradient(
+      110deg,
+      #e2e8f0 8%,
+      #f1f5f9 18%,
+      #e2e8f0 33%
+    );
+    background-size: 200% 100%;
+    @apply animate-skeleton;
+  }
+
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-700 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white font-medium px-6 py-3 rounded-lg transition-all duration-200;
+  }
+  
+  .btn-accent {
+    @apply bg-accent hover:bg-accent-600 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl;
+  }
+
+  /* Card Styles */
+  .card {
+    @apply bg-surface rounded-xl shadow-lg border border-secondary-200;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+  }
+
+  /* Text Gradients */
+  .text-gradient {
+    @apply bg-gradient-tech bg-clip-text text-transparent;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+  
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Hero Background */
+  .hero-bg {
+    @apply bg-gradient-hero;
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  /* Animation delays */
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+
+  /* Custom scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-secondary-100;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-secondary-300 rounded-full;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary-400;
+  }
+}
