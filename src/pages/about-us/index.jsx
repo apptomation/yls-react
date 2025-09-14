@@ -17,8 +17,8 @@ const AboutUs = () => {
         <HeroSection />
         <StorySection />
         <ValuesSection />
-        <TimelineSection />
-        <TeamSection />
+        {/* <TimelineSection />
+        <TeamSection /> */}
       </main>
       
       <Footer />

@@ -199,7 +199,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto container-padding py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
-              <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
+              <h2 className="text-2xl font-bold mb-4 text-white">Stay Updated</h2>
               <p className="text-secondary-200">
                 Get the latest insights on technology trends, best practices, and company updates.
               </p>
@@ -224,8 +224,8 @@ const Footer = () => {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto container-padding py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-secondary-200 text-sm">
-              © {currentYear} <a style={{ textDecoration: 'underline', onHover: { textDecoration: 'none' } }} 
+            <div className="text-secondary-200 text-sm text-white">
+              © {currentYear} <a className='text-white' style={{ textDecoration: 'underline', onHover: { textDecoration: 'none' } }} 
               href="https://apptomation.ca" target="_blank" rel="noopener noreferrer">Apptomation</a>. All rights reserved.
             </div>
             

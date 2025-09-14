@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../../../styles/slideAnimations.css';
-import '../../../styles/yls.css';
+// import '../../../styles/yls.css';
 
 const slides = [
   {
@@ -30,42 +30,42 @@ export default function HeroSection() {
 
 return (
   <>
+ 
     <section className="relative w-full min-h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-100">
-      <div className="relative z-30 w-full flex flex-col md:flex-row items-center justify-center px-6 py-20 md:py-32 gap-10 md:gap-0">
-        {/* Content (left) */}
-        <div className="w-full md:w-1/2 flex flex-col items-start justify-center text-left mb-8 md:mb-0 md:pr-12">
-          <h2 data-animation="fadeInUp" className="text-4xl md:text-6xl font-extrabold text-gray-900 mb-8 drop-shadow-xl leading-tight">
-            {slides[current].title}
-          </h2>
-          <a href="/about" className="inline-block bg-blue-600 text-white px-10 py-4 rounded-xl shadow-xl hover:bg-blue-700 transition font-semibold text-xl mb-8">
-            Start Exploring
-          </a>
+      <div className="relative z-30 w-full flex flex-col items-center justify-center px-6 py-20 md:py-32">
+        {/* Slider */}
+        <div className="relative w-full flex items-center justify-center min-h-[400px] md:min-h-[600px]">
+          {slides.map((slide, idx) => (
+            <div
+              key={slide.image}
+              className={`absolute top-0 left-0 w-full h-full flex flex-col md:flex-row items-center justify-center transition-opacity duration-700 ${current === idx ? 'opacity-100 z-10 animate-slide-in-right' : 'opacity-0 z-0'}`}
+            >
+              <div className="flex-1 flex flex-col items-center justify-center text-center md:text-left px-4 md:px-12">
+                <h2 data-animation="fadeInUp" className="text-4xl md:text-7xl font-extrabold text-gray-900 mb-8 drop-shadow-xl leading-tight">
+                  {slide.title}
+                </h2>
+                <a href="/about" className="inline-block bg-blue-600 text-white px-10 py-4 rounded-xl shadow-xl hover:bg-blue-700 transition font-semibold text-xl mb-8">
+                  Start Exploring
+                </a>
+              </div>
+              <div className="flex-1 flex items-center justify-center">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <img
+                    src={slide.image}
+                    alt={`Slide ${idx + 1}`}
+                    data-animation="slideInRight"
+                    className="w-full h-full max-w-[600px] md:max-w-[700px] object-contain rounded-3xl shadow-2xl"
+                    style={{ minHeight: '400px', maxHeight: '600px' }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-blue-200/10 to-transparent z-20 pointer-events-none rounded-3xl" />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-        {/* Image (right) */}
-        <div className="single-welcome-slide">
-          <div className="background-curve">
-            <img src="./img/core-img/curve-1.png" alt="" />
-          </div>
-        
-        <div className="w-full md:w-1/2 flex items-center justify-center relative min-h-[320px] md:min-h-[480px]">
-          <div className="welcome-thumbnail ">
-            {slides.map((slide, idx) => (
-              <img
-                key={slide.image}
-                src={slide.image}
-                alt={`Slide ${idx + 1}`}
-                data-animation="slideInRight"
-                className={`w-full h-full max-w-[420px] object-contain rounded-2xl shadow-2xl absolute top-0 left-1/2 -translate-x-1/2 transition-opacity duration-700 ${current === idx ? 'opacity-100 z-10 animate-slide-in-right' : 'opacity-0 z-0'}`}
-                style={{ minHeight: '320px', maxHeight: '480px' }}
-              />
-            ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-blue-200/10 to-transparent z-20 pointer-events-none rounded-2xl" />
-          </div>
-        </div>
-</div>
-
-
       </div>
+
+
       {/* Slider dots for mobile */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-40">
         {slides.map((_, idx) => (
