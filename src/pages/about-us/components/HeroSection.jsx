@@ -2,6 +2,7 @@ import React from 'react';
 import { Award, Users, Globe, Zap } from 'lucide-react';
 
 const HeroSection = () => {
+  const [selectedTab, setSelectedTab] = React.useState(0);
   const highlights = [
     {
       icon: Users,
@@ -38,12 +39,44 @@ const HeroSection = () => {
           {/* Main Content */}
           <div className="space-y-6 animate-slide-up">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              About <span className="text-gradient">DigiTekk</span>
+              About <span className="text-gradient">YLS BUSINESS MANAGEMENT</span>
             </h1>
-            <p className="text-xl md:text-2xl text-secondary-200 max-w-4xl mx-auto leading-relaxed">
-              We are a passionate team of innovators, developers, and digital strategists 
-              dedicated to transforming businesses through cutting-edge technology solutions.
-            </p>
+            <div className="flex flex-col items-center">
+              <div className="flex space-x-4 mb-6">
+                {['Who We Are', 'Our Values', 'Why Choose Us'].map((tab, idx) => (
+                  <button
+                    key={tab}
+                    className={`px-6 py-2 rounded-full font-semibold transition-colors duration-200 ${
+                      selectedTab === idx
+                        ? 'bg-accent text-white shadow'
+                        : 'bg-white/10 text-secondary-100 hover:bg-accent/20'
+                    }`}
+                    onClick={() => setSelectedTab(idx)}
+                    type="button"
+                  >
+                    {tab}
+                  </button>
+                ))}
+              </div>
+              <div className="max-w-2xl text-lg text-secondary-100 bg-white/5 rounded-xl p-6 shadow transition-all duration-300">
+                {selectedTab === 0 && (
+                  <span>
+                    YLS is a global business management consultancy dedicated to helping organizations unlock their full potential. Our team combines deep industry expertise with a passion for innovation and client success.
+                  </span>
+                )}
+                {selectedTab === 1 && (
+                  <span>
+                    Integrity, collaboration, and excellence are at the heart of everything we do. We foster a culture of inclusion, continuous learning, and social responsibility to create lasting impact for our clients and communities.
+                  </span>
+                )}
+                {selectedTab === 2 && (
+                  <span>
+                    We deliver tailored solutions, measurable results, and unwavering support. Our proven track record and commitment to client satisfaction make us the trusted partner for businesses seeking transformation and growth.
+                  </span>
+                )}
+              </div>
+            </div>
+           
           </div>
 
           {/* Mission Statement */}
@@ -56,29 +89,7 @@ const HeroSection = () => {
             </p>
           </div>
 
-          {/* Highlights Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-16 animate-slide-up animation-delay-400">
-            {highlights.map((item, index) => {
-              const IconComponent = item.icon;
-              return (
-                <div 
-                  key={item.label}
-                  className="text-center group"
-                  style={{ animationDelay: `${index * 150}ms` }}
-                >
-                  <div className="w-16 h-16 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 border border-white/20">
-                    <IconComponent className="w-8 h-8 text-accent" />
-                  </div>
-                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">
-                    {item.number}
-                  </div>
-                  <div className="text-sm md:text-base text-secondary-200">
-                    {item.label}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          
         </div>
       </div>
 

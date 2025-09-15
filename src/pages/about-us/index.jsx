@@ -15,8 +15,8 @@ const AboutUs = () => {
       {/* Main Content */}
       <main className="pt-16 lg:pt-18">
         <HeroSection />
-        <StorySection />
-        <ValuesSection />
+        {/* <StorySection />
+        <ValuesSection /> */}
         {/* <TimelineSection />
         <TeamSection /> */}
       </main>
