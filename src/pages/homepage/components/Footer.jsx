@@ -21,24 +21,24 @@ const Footer = () => {
       { label: 'Mobile Apps', path: '/services/mobile-apps' },
       { label: 'Cloud Solutions', path: '/services/cloud-solutions' },
       { label: 'Digital Transformation', path: '/services/digital-transformation' },
-      { label: 'Cybersecurity', path: '/services/cybersecurity' },
+      // { label: 'Cybersecurity', path: '/services/cybersecurity' },
       { label: 'Data Analytics', path: '/services/data-analytics' },
     ],
     company: [
       { label: 'About Us', path: '/about-us' },
-      { label: 'Our Team', path: '/team' },
-      { label: 'Careers', path: '/careers' },
-      { label: 'Portfolio', path: '/portfolio' },
-      { label: 'Case Studies', path: '/case-studies' },
-      { label: 'Blog', path: '/blog' },
+      { label: 'Profile', path: '/profile' },
+      // { label: 'Careers', path: '/careers' },
+      // { label: 'Portfolio', path: '/portfolio' },
+      // { label: 'Case Studies', path: '/case-studies' },
+      // { label: 'Blog', path: '/blog' },
     ],
     support: [
       { label: 'Contact Us', path: '/contact' },
-      { label: 'Help Center', path: '/help' },
-      { label: 'Documentation', path: '/docs' },
-      { label: 'System Status', path: '/status' },
-      { label: 'Privacy Policy', path: '/privacy' },
-      { label: 'Terms of Service', path: '/terms' },
+      // { label: 'Help Center', path: '/help' },
+      // { label: 'Documentation', path: '/docs' },
+      // { label: 'System Status', path: '/status' },
+      // { label: 'Privacy Policy', path: '/privacy' },
+      // { label: 'Terms of Service', path: '/terms' },
     ],
   };
 
@@ -139,7 +139,7 @@ const Footer = () => {
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
                   <Link
-                    to={link.path}
+                    to="#"
                     className="text-secondary-200 hover:text-white transition-colors duration-200 group flex items-center"
                   >
                     <span className="group-hover:translate-x-1 transition-transform duration-200">
